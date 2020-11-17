@@ -1,0 +1,15 @@
+{
+  "name": "maplestory-timer",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/kdo9921/maplestory-timer",
+  "author": "kiwi <kdo9921@apteryx.moe>",
+  "license": "COGEM-WARE",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  }
+}
