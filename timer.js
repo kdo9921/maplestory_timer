@@ -2,10 +2,10 @@ var running = false;
 var huntTimer = 7200;
 var oneMinute = 60000;    //개발중 테스트 용도, 실 사용시 60 * 1000 밀리초
 var clockSetting = {
-    m3: [false, "cb3m"],
-    m15: [false, "cb15m"],
-    m30: [false, "cb30m"],
-    m60: [false, "cb60m"]
+    m3: [false, "cb3m", 3],
+    m15: [false, "cb15m", 15],
+    m30: [false, "cb30m", 30],
+    m60: [false, "cb60m", 60]
 };
 var timer = {
     hunting: null,
@@ -89,13 +89,11 @@ function setChange() {
             if (clockSetting[i][0]) {
                 clockSetting[i][0] = false;
                 clearInterval(timer[i]);
-                console.log(i+ " 타이머 종료");
             } else {
                 clockSetting[i][0] = true;
                 timer[i] = setInterval(function () {
                     alertBuff(i);
-                }, 3 * oneMinute);
-                console.log(i+ " 타이머 시작");
+                }, clockSetting[i][2] * oneMinute);
             }
         }
     }
