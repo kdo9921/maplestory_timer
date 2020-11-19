@@ -1,49 +1,51 @@
 {
-  "name": "maplestory-timer",
+  "name": "maplestory_timer",
+  "productName": "Maple Timer",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "이제 경험치 쿠폰 쓰는걸 잊어버리지 마세요",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build:osx": "build --mac",
+    "build:win": "npm run build:win32 && npm run build:win64",
+    "build:win32": "build --win --ia32",
+    "build:win64": "build --win --x64"
   },
   "repository": "https://github.com/kdo9921/maplestory-timer",
   "author": "kiwi <kdo9921@apteryx.moe>",
   "license": "COGEM-WARE",
   "devDependencies": {
-    "electron": "^10.1.5",
-    "electron-builder": "^22.9.1"
+    "electron": "^10.1.5"
   },
   "build": {
     "asar": true,
     "appId": "moe.apteryx.maplestory_timer",
-    "productName": "maplestory_timer",
+    "productName": "Maple Timer",
     "mac": {
       "target": [
         "default"
       ],
-      "icon": "./resources/installer/Icon.icns"
+      "icon": "img/martini.icns"
     },
     "dmg": {
-      "title": "HelloElectron",
-      "icon": "./resources/installer/Icon.icns"
+      "title": "MapleTimer",
+      "icon": "img/martini.icns"
     },
     "win": {
       "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
+        "zip",
+        "nsis"
       ],
-      "icon": "./img/martini.ico"
+      "icon": "img/martini.icㅐ"
     },
     "nsis": {
-      "oneClick": true,
-      "perMachine": false,
-      "installerIcon": "./img/martini.ico",
-      "createDesktopShortcut": true
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "installerLanguages": [
+           "en_US",
+           "ko_KR"
+      ],
+      "language": "1042"
     }
   }
 }

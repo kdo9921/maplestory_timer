@@ -2,11 +2,13 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
+
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 300,
     height: 430,
+    icon: path.join(__dirname, 'img/martini.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
