@@ -3,26 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="style.css" rel="stylesheet" type="text/css" />
-	<title>메이플 타이머</title>
+	<title>재획 타이머</title>
 </head>
 <body>
 	<header>
-		<h1>메이플 타이머</h1>
+		<img src="./img/martini.png">
+		<h2 id="huntTimer">2:00:00</h2>
 	</header>
 	<div class="container">
-		<div class="buff">
-			<img src="./img/biyak.jpeg">
-			<h2>120분</h2>
-			<div class="check">
-				<input id="cb120m" type="checkbox">
-				<label for="cb120m"></label>
-			</div>
-		</div>
 		<div class="buff">
 			<img src="./img/exp.png">
 			<h2>60분</h2>
 			<div class="check">
-				<input id="cb60m" type="checkbox">
+				<input id="cb60m" type="checkbox" onchange="setChange()">
 				<label for="cb60m"></label>
 			</div>
 		</div>
@@ -30,7 +23,7 @@
 			<img src="./img/mvp.png">
 			<h2>30분</h2>
 			<div class="check">
-				<input id="cb30m" type="checkbox">
+				<input id="cb30m" type="checkbox" onchange="setChange()">
 				<label for="cb30m"></label>
 			</div>
 		</div>
@@ -38,7 +31,7 @@
 			<img src="./img/exp.png">
 			<h2>15분</h2>
 			<div class="check">
-				<input id="cb15m" type="checkbox">
+				<input id="cb15m" type="checkbox" onchange="setChange()">
 				<label for="cb15m"></label>
 			</div>
 		</div>
@@ -46,16 +39,17 @@
 			<img src="./img/simbol.png">
 			<h2>3분</h2>
 			<div class="check">
-				<input id="cb3m" type="checkbox">
+				<input id="cb3m" type="checkbox" onchange="setChange()">
 				<label for="cb3m"></label>
 			</div>
 		</div>
 	</div>
 	<footer>
-		<button id="start">시작</button>
-		<button id="end">종료</button>
+		<button id="start" onclick="startTimer()">시작</button>
+		<button id="end" onclick="stopTimer()">종료</button>
 	</footer>
 	<!-- You can also require other files to run in this process -->
 	<script type="text/javascript" src="timer.js"></script>
+	<script src="notify.js"></script>
 </body>
 </html>

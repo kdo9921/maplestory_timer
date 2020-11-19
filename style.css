@@ -1,33 +1,42 @@
+header {
+    width: 100%;
+    margin-top: 8px;
+    display: inline-flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #333333;
+}
+
 .container {
     display: flex;
     flex-direction: column;
 }
 
 .buff {
+    width: 100%;
     margin-top: 8px;
     display: inline-flex;
     justify-content: space-between;
-    border-bottom: 2px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
 }
 
-.buff img {
+.buff img, header img {
     width: 48px;
     height: 48px;
 }
 
-.buff h2 {
-    margin: 0 20px 0 0;
+.buff h2, header h2 {
+    margin: 0;
     min-width: 120px;
     text-align: right;
     font-size: 48px;
 }
 
+.check {
+    margin-left: 32px;
+}
 .buff input[type=checkbox] {
     display: none;
 }
-
-
-
 .buff input[type="checkbox"]+label {
     display: inline-block;
     width: 42px;
@@ -65,6 +74,10 @@ button {
     height: 32px;
     border : 0 solid;
     border-radius: 6px;
+    font-weight: bold;
+}
+button[disabled] {
+    background-color: gray !important;
 }
 #start {
     background-color: #9ce159;
