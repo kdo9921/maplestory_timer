@@ -10,6 +10,40 @@
   "author": "kiwi <kdo9921@apteryx.moe>",
   "license": "COGEM-WARE",
   "devDependencies": {
-    "electron": "^10.1.5"
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "asar": true,
+    "appId": "moe.apteryx.maplestory_timer",
+    "productName": "maplestory_timer",
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "./resources/installer/Icon.icns"
+    },
+    "dmg": {
+      "title": "HelloElectron",
+      "icon": "./resources/installer/Icon.icns"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "./img/martini.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "installerIcon": "./img/martini.ico",
+      "createDesktopShortcut": true
+    }
   }
 }
